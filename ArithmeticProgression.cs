@@ -1,6 +1,6 @@
 ﻿using System;
-namespace _8tvor
-{ 
+namespace _7
+{
     class ArithmeticProgression:Progression
     {
         int[] m;
@@ -17,7 +17,7 @@ namespace _8tvor
             }
         }
 
-        public int GetElement(int k)
+        public override int GetElement(int k)
         {
             return m[k];
         }

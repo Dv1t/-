@@ -1,10 +1,10 @@
 ﻿using System;
 
 
-namespace _8tvor
+namespace _7
 {
-    interface Progression
+    abstract class Progression
     {
-         int GetElement(int k);
+        public abstract int GetElement(int k);
     }
 }

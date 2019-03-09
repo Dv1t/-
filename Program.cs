@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _8
+namespace _7
 {
     class Program
     {
@@ -19,15 +19,9 @@ new DateTime(2014, 12, 14));
             b2.TakeItem();
             b2.Print();
 
-            Audit.RunAudit();
             Magazine mag1 = new Magazine("О природе", 5, "Земля и мы", 2014, 1235, true);
             mag1.TakeItem();
             mag1.Print();
-            mag1.Subs();
-            mag1.Print();
-
-
-          
 
             Console.WriteLine("\n Тестирование полиморфизма");
             b2.ReturnSrok();
@@ -41,17 +35,27 @@ new DateTime(2014, 12, 14));
             it.Return();
             it.Print();
 
-            Book b1 = new Book("Толстой Л.Н.", "Война и мир 2", publ, 1235, 2013, 100, true);
-            Book b3 = new Book("Толстой Л.Н.", "Война и мир 3", publ, 1236, 2013, 99, true);
-            Magazine mag2 = new Magazine("О технике", 5, "Земля и мы", 2014, 1237, true);
+            int n = 5;
+            int p = 3;
+            int s = 1;
 
-            Audit.StopAudit();
-            mag2.Subs();
+            ArithmeticProgression a1 = new ArithmeticProgression(n, p, s);
+            GeometricProgression g1 = new GeometricProgression(n, p, s);
 
-            List<Item> itlist = new List<Item>();
-            itlist.AddRange(new Item[] { b1, b2, b3, mag1, mag2 });
-            itlist.Sort();
-            Console.WriteLine("\nСортировка по инвентарному номеру"); foreach (Item x in itlist) { x.Print(); }
+            for(int i = 0;i<n;i++)
+            {
+                Console.Write(" {0}",a1.GetElement(i));
+
+            }
+            Console.WriteLine();
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(" {0}", g1.GetElement(i));
+
+            }
+            Console.WriteLine();
+
 
             Console.ReadKey();
         }

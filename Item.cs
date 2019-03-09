@@ -4,20 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _8
+namespace _7
 {
-    public abstract class Item:IComparable
+    abstract class Item
     {
         protected long invNumber;
         protected bool taken;
-
-        int IComparable.CompareTo(object obj)
-        {
-            Item it = (Item)obj;
-            if (this.invNumber == it.invNumber) return 0;
-            else if (this.invNumber > it.invNumber) return 1;
-            else return -1;
-        }
 
         public Item(long invNumber, bool taken)
         {

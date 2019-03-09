@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _8
+namespace _7
 {
-    class Book : Item, IPr
+    class Book : Item
     {
         public string Author { get; set; } 
         public string Title { get; set; }
@@ -65,7 +65,7 @@ namespace _8
             this.Year = year;
         }
 
-        public void SetPrice(double price)
+        public static void SetPrice(double price)
         {
             Book.Price = price;
         }
