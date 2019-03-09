@@ -1,34 +1,61 @@
 ﻿using System;
-class DevideIt
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _6
 {
-    static void Main(string[] args)
+    class Triangle
     {
-        try
+        public int a, b, c;
+        private bool exist=true;
+        public Triangle(int a,int b,int c)
         {
-            Console.WriteLine("Please enter the first integer");
-            string temp = Console.ReadLine();
-            int i = Int32.Parse(temp);
-            Console.WriteLine("Please enter the second integer");
-            temp = Console.ReadLine();
-            int j = Int32.Parse(temp);
-            int k = i / j;
-            Console.WriteLine(k);
-            System.Threading.Thread.Sleep(2000);
+            this.a = a;
+            this.b = b;
+            this.c = c;
+            if((a+b<c)||(a+c<b)||(b+c<a))
+            {
+                Console.WriteLine("Треугольник с заданными параметрами не существует");
+                exist = false;
+            }
         }
-        catch (FormatException e)
+        public void Print()
         {
-            Console.WriteLine("An format exception was trown: {0}", e.Message);
+            if (exist)
+            {
+                Console.WriteLine("Длины сторон:{0},{1},{2}", this.a, this.b, this.c);
+            }
+            else
+            {
+                Console.WriteLine("Треугольник с заданными параметрами не существует");
+            }
         }
-        catch (DivideByZeroException e)
+        public void Perimetr()
         {
-            Console.WriteLine("An DivideByZero exception was trown: {0}", e.Message);
-            System.Threading.Thread.Sleep(2000);
+            if (exist)
+            {
+                Console.WriteLine("Периметр = {0}", this.a+ this.b+ this.c);
+            }
+            else
+            {
+                Console.WriteLine("Треугольник с заданными параметрами не существует");
+            }
         }
-        catch (Exception e)
+        public void Square()
         {
-            Console.WriteLine("An exception was trown: {0}", e.Message);
+            if (exist)
+            {
+                float p = (float)(this.a + this.b + this.c) / 2;
+            double s = Math.Sqrt(p * (p - this.a) * (p - this.b) * (p - this.c));
+            Console.WriteLine("Площадь = {0}", s);
+            }
+            else
+            {
+                Console.WriteLine("Треугольник с заданными параметрами не существует");
+            }
         }
 
     }
 }
-
